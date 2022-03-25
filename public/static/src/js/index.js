@@ -22,8 +22,8 @@ const router = async () => {
 
     const potentialMatches = routes.map((route) => {
         return {
-        route: route,
-        isMatch: location.pathname === route.path,
+            route: route,
+            isMatch: location.pathname === route.path,
         };
     });
 
@@ -38,24 +38,18 @@ const router = async () => {
 
     const view = new match.route.view();
 
-    if (match.route.path === "/manage") {
-        setTimeout(() => {
-            const app = new Manage();
-            app.init();
-        }, 5);
-    } else if(match.route.path === "/" || match.route.path === "/random"){
-        setTimeout(() => {
-            const app = new Random();
-            app.init();
-        }, 5);
-    } else {
-        setTimeout(() => {
-            const app = new Login();
-            app.init();
-        }, 5);
-    }
-
     document.querySelector("#app").innerHTML = await view.getHtml();
+
+    if(match.route.path === "/" || match.route.path === "/random") {
+        const app = new Random();
+        app.init();
+    } else if (match.route.path === "/manage") {
+        const app = new Manage();
+        app.init();
+    } else {
+        const app = new Login();
+        app.init();
+    }
 };
 
 window.addEventListener("popstate", router);
