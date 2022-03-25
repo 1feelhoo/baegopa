@@ -97,7 +97,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 30px;
+  margin: 20px;
   width: 100%;
 }
 
@@ -123,7 +123,7 @@ a:hover {
 
 /* main */
 .main-container {
-  margin-top: 30px;
+  margin-top: 20px;
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -216,5 +216,15 @@ li.menu-item > .menu-item-name {
 
   .menu-form {
     width: 370px;
+  }
+  
+  .btn {
+    padding: 0 8px;
+    margin: 0 10px;
+    font-size: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
   }
 }
